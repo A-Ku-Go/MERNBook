@@ -1,0 +1,137 @@
+.header-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 2px 12px rgba(67,233,123,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+  min-height: 64px;
+  box-sizing: border-box;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #43e97b;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: left;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.header-btn,
+.header-icon-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 14px;
+  transition: background 0.2s;
+}
+
+.header-btn {
+  padding: 6px 12px;
+  margin-left: 2px;
+  color: #fff;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.header-btn.logout-btn {
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+  color: #fff;
+}
+
+.header-icon-btn {
+  background: none;
+  font-size: 1.3rem;
+  color: #43e97b;
+  margin-right: 0;
+  padding: 0 6px;
+}
+
+.header-icon-btn.bell {
+  color: #38f9d7;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 700px) {
+  .header-root {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 4px !important;
+    min-height: unset;
+  }
+  .header-left {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  .header-logo {
+    font-size: 1rem;
+  }
+  .header-right {
+  display: flex;
+  align-items: left;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-right: 24px;
+}
+  .header-right.mobile-menu-open {
+    display: flex;
+  }
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 4000;
+  }
+  .header-btn, .header-icon-btn {
+    font-size: 1rem !important;
+    padding: 8px 10px !important;
+    margin-left: 0 !important;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: left;
+  }
+  .header-user {
+    width: 100%;
+    gap: 10px;
+  }
+  .auth-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+}
